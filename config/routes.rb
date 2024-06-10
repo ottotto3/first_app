@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'lists/new'
-  get 'lists' => 'lists#create'
-  get 'lists/index'
+  post 'lists' => 'lists#create'
+  get 'lists' => 'lists#index'
   get 'lists/show'
-  get 'lists/edit'
+  get 'lists/:id' => 'lists#show', as: 'list'
   get 'top' => 'homes#top'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
